@@ -9,7 +9,7 @@ class Article(BaseModel):
     published: bool
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserBase(BaseModel):
@@ -25,7 +25,7 @@ class UserDisplay(BaseModel):
 
     class config:
         # użycie tego pozwala na konwertowanie między typami (z klasy db_user do tej klasy)
-        orm_mode = True
+        from_attributes = True
 
 
 class ArticleBase(BaseModel):
@@ -41,7 +41,7 @@ class User(BaseModel):
     username: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ArticleDisplay(BaseModel):
@@ -51,4 +51,4 @@ class ArticleDisplay(BaseModel):
     user: User
 
     class Config:
-        orm_mode = True
+        from_attributes = True
